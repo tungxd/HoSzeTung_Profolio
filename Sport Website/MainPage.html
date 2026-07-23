@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+<head>
+    <title>Main Page</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="ddaccordion.js"></script>	
+	<style>
+	body {
+		background-image: url(sport.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	h1 {
+		color:BlueViolet;
+		text-align:center;
+		font-family:Trebuchet MS;
+		margin-top: 10px;
+	}
+	p {
+		text-align:center;
+		font-family:Tahoma;
+		font-size: 22px;
+		color: Indigo;
+	}
+	.product {
+		text-align:center;
+		font-family:Tahoma;
+		font-size: 30px;
+		color:OrangeRed;
+		margin-top: 50px;
+	}
+	.info {
+		overflow:auto;
+		height:91%;
+	}
+	.quote {
+		height:300px;
+		width:200px;
+		float:left;
+		animation-name:quote;
+		animation-duration:3s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		animation-delay: 0s;
+		animation-direction: alternate;	
+	}
+	@keyframes quote {
+		0% { transform: translate(0, 140px); }
+		50%  { transform: translate(0, 0px); }
+		100%   { transform: translate(0, 140px); }  
+	}
+	#gear {
+		float:right;
+		height:420px;
+		width:420px;
+		margin-right:20px;
+		margin-top: 20px;
+		display: flex;
+		justify-content: center;
+		position:relative;
+	}
+	#gear img {
+		height:400px;
+		width:400px;
+		position: relative;
+		border: 5px solid purple;
+		object-fit: cover;
+	}
+	.text {
+		float:left;
+		margin-left:100px;
+	}
+	.flexcards .profiles img {
+		height:100px;
+		width:100px;
+	}
+	.message a {
+		margin-left:100px;
+	}
+	.flexcards{ 
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin-bottom: 1em;
+	}
+	.flexcards .profiles{ 
+		flex: 1;
+		position: relative;
+		padding: 5px;
+		max-width: 240px; 
+		min-width: 240px; 
+		margin-top: 10px;
+		margin-right: 10px;
+		font-size: 90%;
+		cursor: pointer;
+		background: lightgreen;
+	}
+	.flexcards .profiles h3{
+		margin: 0;
+	}
+	.flexcards .profiles img{
+		border-radius: 50%;
+		float: left;
+		margin-right: 15px;
+		box-shadow: 2px 2px 5px gray;
+	}
+	div.details{ 
+		border-top: 5px solid green;
+		font-size: 110%;
+	}
+	</style>
+</head>
+<body>
+	<h1>Welcome to Healthy Sports Gear Company Limited!</h1>
+	<div class="info">
+		<img class="quote" src="quote.jpg" alt="information"/>
+		<div class="text">
+			<p>Come and check out our buyer’s sport paradise!</p>
+			<p class="product"><i>Trendy Sports Gear</i></p>
+			<p class="product"><i>Brand New Sportswear</i></p>
+		</div>
+		<div id="gear">
+			<img id="picture" src="BasketballShirt.jpg"/>
+		</div>
+		<div class="message">
+			<a href="#" onClick="ddaccordion.expandone('profiles', 0); return false">Expand header</a>
+			<a>|</a> <a href="#" onClick="ddaccordion.collapseone('profiles', 0); return false">Collapse header</a>
+		</div>	
+		<div class="flexcards" id="flexcards1">
+			<div class="profiles">
+			<img src="sports.avif" /> <h3>Sport</h3> Press to see more details
+			</div>
+		</div>
+			
+	</div>
+	<div class="details">
+	<p>Sport pertains to any form of physical activity or game, often competitive and organized, that aims to use, 
+	maintain, or improve physical ability and skills while providing enjoyment to participants and, in some cases, 
+	entertainment to spectators.</p>
+	</div>	
+	<script>
+		const images = [
+          "BasketballShirt.jpg",
+          "BadmintonSet.jpg",
+          "tabletennis.jpg",
+		  "FootballShoes.jpg",
+		  "tennis.jpg"
+        ];
+    
+        let currentIndex = 0;
+		let isMouseOver = false;
+		let change;
+        const imageElement = document.getElementById("picture");
+    
+		function fadeInImage() {
+			let opacity = 0;
+			const fadeInterval = setInterval(() => {
+				opacity+=0.1;
+				imageElement.style.opacity=opacity;
+				if (opacity>=1) {
+					clearInterval(fadeInterval);
+				}
+			}, 50);
+		}	
+				
+        function fadeOutImage() {
+			let opacity = 1;
+			const fadeInterval = setInterval(() => {
+				opacity-=0.1;
+				imageElement.style.opacity=opacity;
+				if (opacity<=0) {
+					clearInterval(fadeInterval)
+					changeImage();
+					fadeInImage();
+				}
+			}, 50);
+        }
+    
+		function changeImage() {
+			currentIndex = (currentIndex+1)%images.length;
+			imageElement.src = images[currentIndex];
+		}	
+		
+		function handleMouseEnter() {
+			if (!isMouseOver) {
+				changeImage();
+				isMouseOver = true;
+			}
+		}	
+		
+		function handleMouseLeave() {
+			if (isMouseOver) {
+				changeImage();
+				isMouseOver = false;
+			}
+		}
+		
+		function startAutoChange() {
+			change=setInterval(fadeOutImage, 4000);
+		}
+		
+		function stopAutoChange() {
+			clearInterval(change);
+		}
+		
+		imageElement.addEventListener("mouseenter", handleMouseEnter);
+		imageElement.addEventListener("mouseleave", handleMouseLeave);
+		
+		startAutoChange();
+		
+		ddaccordion.init({
+			headerclass: "profiles", 
+			contentclass: "details", 
+			revealtype: "click", 
+			mouseoverdelay: 200, 
+			collapseprev: true, 
+			defaultexpanded: [0], 
+			onemustopen: false, 
+			animatedefault: false, 
+			scrolltoheader: false, 
+			scrolltocontent: true, 
+			persiststate: true, 
+			toggleclass: ["", "openprofile"], 
+			togglehtml: ["none", "", ""], 
+			animatespeed: "fast", 
+			oninit:function(expandedindices){ 
+			},
+			onopenclose:function(header, index, state, isuseractivated){ 
+			}
+		})
+    </script>
+</body>
+</html>	

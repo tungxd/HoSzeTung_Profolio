@@ -1,0 +1,108 @@
+<html>
+<head>
+	<title>Products Catalogue</title>
+	<style>
+	h1 {
+		text-align:center;
+		color:BlueViolet;
+		font-family:Trebuchet MS;
+	}
+	body {
+		background-image: url(sport.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		text-align:center;
+		animation: fadeIn 5s;
+	}
+	.Gear {
+		margin-left:100px;
+		display:inline-block;
+		opacity: 1;
+		transition: .5s ease;
+		backface-visibility: hidden;
+		height:350px;
+		width: 500px;
+		border: 5px solid DeepSkyBlue;
+		border-radius: 10px;
+	}
+	.Wear {
+		display:inline-block;
+		opacity: 1;
+		transition: .5s ease;
+		backface-visibility: hidden;
+		height:350px;
+		width: 500px;
+		margin-left:150px;
+		border: 5px solid DeepSkyBlue;
+		border-radius: 10px;
+	}
+	.effect {
+		transition: .5s ease;
+	    opacity: 0;
+	    position: absolute;
+	    transform: translate(200%, -450%);
+	    text-align: center;
+	}
+	.effect1 {
+		transition: .5s ease;
+	    opacity: 0;
+	    position: absolute;
+	    transform: translate(250%, -450%);
+	    text-align: center;
+	}
+	.text {
+		background-color: #04AA6D;
+		color: white;
+		font-size: 16px;
+		padding: 16px 32px;
+	}
+	.Catalogue:hover .Gear{
+		opacity: 0.3;
+	}
+	.Catalogue2:hover .Wear{
+		opacity: 0.3;
+	}
+	.Catalogue:hover .effect{
+		opacity: 1;
+	}
+	.Catalogue2:hover .effect1{
+		opacity: 1;
+	}
+	.Catalogue {
+		float: left;
+		height:350px;
+		width:500px;
+	}
+	.Catalogue2 {
+		float: left;
+		height:350px;
+		width:500px;
+	}
+	@keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+	}
+	</style>
+</head>
+
+<body>
+	<br/>
+	<h1>Choose one catalogue for visit our products</h1>
+	<br/>
+	
+	<div class="Catalogue">
+		<a href="SportsGear.html" target="main">
+		<img class="Gear" src="SportsGear.jpg" alt="SportsGear"/></a>
+		<div class="effect">
+			<div class="text">Sports Gear</div>
+		</div>
+	</div>
+	<div class="Catalogue2">
+		<a href="Sportswear.html" target="main">
+		<img class="Wear" src="Sportswear.webp" alt="Sportswear"/></a>
+		<div class="effect1">
+			<div class="text">Sportswear</div>
+		</div>
+	</div>	
+</body>
+</html>	

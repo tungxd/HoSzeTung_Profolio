@@ -1,0 +1,53 @@
+<html>
+<head>
+	<title>Game Page</title>
+	<style>
+	body {
+		background-image: url(sport.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		animation: fadeIn 5s;
+		margin-top: 50px;
+	}
+	@keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+	}
+	h1 {
+		text-align:center;
+		color:BlueViolet;
+		font-family:Trebuchet MS;
+	}
+	.diffuculty a:link, a:visited {
+		text-decoration:none;
+		color: MediumVioletRed;
+		width: 300px;
+		height: 180px;
+		border:5px solid DeepSkyBlue;
+		border-radius: 10px;
+		float:left;
+		margin-left: 200px;
+		font-size: 50px;
+		text-align: center;
+		margin-top:20px;
+		padding-top: 120px;
+	}
+	.diffuculty a:hover {
+		background-color:LightCyan;
+		color: SlateBlue;
+		width: 300px;
+		height: 180px;
+	}
+	</style>
+</head>
+
+<body>
+	<h1>Choose diffuculty to play the game</h1>
+	<div class="diffuculty">
+		<a href="Easy.html" target="main">Easy</a>
+	</div>
+	<div class="diffuculty">
+		<a href="Hard.html" target="main">Hard</a>
+	</div>
+</body>
+</html>	

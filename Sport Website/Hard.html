@@ -1,0 +1,225 @@
+<html>
+<head>
+	<title>Hard Mode</title>
+	<style>
+	body {
+		background-image: url(sport.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		display: flex;
+	}
+	.MemoryGame {
+	    width: 950px;
+	    height: 500px;
+	    margin: auto;
+	    display: flex;
+	    flex-wrap: wrap;
+	    perspective: 1000px;
+	}
+	.card {
+	    width: calc(16% - 10px);
+	    height: calc(25% - 10px);
+	    margin: 5px;
+	    position: relative;
+	    transform: scale(1);
+	    transform-style: preserve-3d;
+	    transition: transform .5s;
+	    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+	}
+	.card:active {
+	    transform: scale(0.97);
+	    transition: transform .2s;
+	}
+	.card.flip {
+	    transform: rotateY(180deg);
+	}
+	.front-face, .back-face {
+	    width: 100%;
+	    height: 100%;
+	    position: absolute;
+	    border-radius: 5px;
+	    backface-visibility: hidden;
+	}
+	.back-face:hover{
+		border-radius: 5px;
+	}
+	.front-face {
+	  transform: rotateY(180deg);
+	}
+	</style>
+</head>
+
+<body>
+	<section class="MemoryGame">
+		<div class="card" data-framework="gear1">
+          <img class="front-face" src="Basketball.webp" alt="gear1" />
+          <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+        </div>
+        <div class="card" data-framework="gear1">
+          <img class="front-face" src="Basketball.webp" alt="gear1" />
+          <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+        </div>
+		
+		<div class="card" data-framework="gear2">
+          <img class="front-face" src="BadmintonSet.jpg" alt="gear2" />
+          <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+        </div>
+        <div class="card" data-framework="gear2">
+          <img class="front-face" src="BadmintonSet.jpg" alt="gear2" />
+          <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+        </div>
+    
+        <div class="card" data-framework="gear3">
+          <img class="front-face" src="TableTennisRacket.jpg" alt="gear3" />
+          <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+        </div>
+        <div class="card" data-framework="gear3">
+          <img class="front-face" src="TableTennisRacket.jpg" alt="gear3" />
+          <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+        </div>
+    
+        <div class="card" data-framework="gear4">
+          <img class="front-face" src="TableTennisBall.jpg" alt="gear4" />
+          <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+        </div>
+        <div class="card" data-framework="gear4">
+          <img class="front-face" src="TableTennisBall.jpg" alt="gear4" />
+          <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+        </div>
+		
+        <div class="card" data-framework="gear5">
+          <img class="front-face" src="football.png" alt="gear5" />
+          <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+        </div>
+        <div class="card" data-framework="gear5">
+          <img class="front-face" src="football.png" alt="gear5" />
+          <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+        </div>
+    
+        <div class="card" data-framework="gear6">
+          <img class="front-face" src="TennisSet.webp" alt="gear6" />
+          <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+        </div>
+        <div class="card" data-framework="gear6">
+          <img class="front-face" src="TennisSet.webp" alt="gear6" />
+          <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+        </div>
+
+        <div class="card" data-framework="gear7">
+            <img class="front-face" src="TennisBall.jpg" alt="gear7" />
+            <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+          </div>
+          <div class="card" data-framework="gear7">
+            <img class="front-face" src="TennisBall.jpg" alt="gear7" />
+            <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+          </div>
+
+          <div class="card" data-framework="gear8">
+            <img class="front-face" src="BadmintonBall.webp" alt="gear8" />
+            <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+          </div>
+          <div class="card" data-framework="gear8">
+            <img class="front-face" src="BadmintonBall.webp" alt="gear8" />
+            <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+          </div>
+		  
+		  <div class="card" data-framework="wear9">
+            <img class="front-face" src="BasketballShirt.jpg" alt="wear9" />
+            <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+          </div>
+          <div class="card" data-framework="wear9">
+            <img class="front-face" src="BasketballShirt.jpg" alt="wear9" />
+            <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+          </div>
+
+          <div class="card" data-framework="wear10">
+            <img class="front-face" src="BadmintonShoes.jpg" alt="wear10" />
+            <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+          </div>
+          <div class="card" data-framework="wear10">
+            <img class="front-face" src="BadmintonShoes.jpg" alt="wear10" />
+            <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+          </div>
+
+          <div class="card" data-framework="wear11">
+            <img class="front-face" src="TableTennisShirt.jpg" alt="wear11" />
+            <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+          </div>
+          <div class="card" data-framework="wear11">
+            <img class="front-face" src="TableTennisShirt.jpg" alt="wear11" />
+            <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+          </div>
+
+          <div class="card" data-framework="wear12">
+            <img class="front-face" src="FootballShoes.jpg" alt="wear12" />
+            <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+          </div>
+          <div class="card" data-framework="wear12">
+            <img class="front-face" src="FootballShoes.jpg" alt="wear12" />
+            <img class="back-face" src="SportsGear.jpg" alt="frontgear" />
+          </div>
+	</section>	
+	<script>
+	const cards = document.querySelectorAll('.card');
+
+	let hasFlippedCard = false;
+	let lockBoard = false;
+	let firstCard, secondCard;
+
+	function flipCard() {
+	  if (lockBoard) return;
+	  if (this === firstCard) return;
+
+	  this.classList.add('flip');
+
+	  if (!hasFlippedCard) {
+		hasFlippedCard = true;
+		firstCard = this;
+
+		return;
+	  }
+
+	  secondCard = this;
+	  checkForMatch();
+	}
+
+	function checkForMatch() {
+	  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+
+	  isMatch ? disableCards() : unflipCards();
+	}
+
+	function disableCards() {
+	  firstCard.removeEventListener('click', flipCard);
+	  secondCard.removeEventListener('click', flipCard);
+
+	  resetBoard();
+	}
+
+	function unflipCards() {
+	  lockBoard = true;
+
+	  setTimeout(() => {
+		firstCard.classList.remove('flip');
+		secondCard.classList.remove('flip');
+
+		resetBoard();
+	  }, 1500);
+	}
+
+	function resetBoard() {
+	  [hasFlippedCard, lockBoard] = [false, false];
+	  [firstCard, secondCard] = [null, null];
+	}
+
+	(function shuffle() {
+	  cards.forEach(card => {
+		let randomPos = Math.floor(Math.random() * 12);
+		card.style.order = randomPos;
+	  });
+	})();
+
+	cards.forEach(card => card.addEventListener('click', flipCard));
+	</script>
+</body>
+</html>
