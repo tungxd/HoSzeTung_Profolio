@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Home page</title>
+    <style>
+        .body {
+            font-size: 24px;
+        }
+
+
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div w3-include-html="navibar.html"></div>
+	<script>
+		includeHTML();
+	</script>
+
+    <img src="landing.jpg" style="width:100%" />
+
+    <div class="row">
+        <div class="col-xl-6">
+            <img src="cover_1.jpg" style="width:100%" />
+        </div>
+        <div class="col-xl-6" >
+            <h3 style="text-align: center; padding-top: 50px">
+                <strong>Welcome to Elegance Haven:
+                <br/>
+                Your Sanctuary for Beauty and Relaxation</strong>
+            </h3>
+            <br/>
+            <p style="padding-right: 50px; padding-bottom: 50px; padding-left: 50px">
+                In today’s fast-paced world, finding a moment of tranquility is essential. Introducing Elegance Haven, a brand new beauty house designed specifically for young professional women seeking a serene escape. At Elegance Haven, we offer a perfect blend of luxury and relaxation through our makeup products, skincare services, and massage treatments. Our mission is to provide a space where you can unwind, rejuvenate, and embrace your natural beauty.
+                <br />
+                <br/>
+                At Elegance Haven, it’s not just about the treatments; it’s about the entire experience. Our beauty house is designed with your comfort and relaxation in mind. From the moment you step through our doors, you’ll be greeted by a serene and welcoming atmosphere. Relax with a cup of our signature herbal tea in our calming lounge area, catch up with friends, or simply take a moment for yourself.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-6">
+            <h3 style="text-align: center; padding-top: 50px">
+                <strong>Luxurious Skincare Services</strong>
+            </h3>
+            <br />
+            <p style="padding-right: 50px; padding-bottom: 50px; padding-left: 50px">
+                Our personalized skincare services are designed to address your unique skin needs, providing a radiant and healthy glow. At Elegance Haven, we offer a variety of treatments, including hydrating facials, deep-cleansing therapies, and anti-aging solutions. Using the finest products and latest techniques, our experts will create a customized skincare regimen that leaves your skin feeling refreshed and rejuvenated. Enjoy a peaceful environment where you can relax and let our professionals pamper you.
+            </p>
+            <h3 style="text-align: center; padding-top: 50px">
+                <strong>Soothing Massage Treatments</strong>
+            </h3>
+            <p style="padding-right: 50px; padding-bottom: 50px; padding-left: 50px">
+                Stress and tension are part of daily life, but they don’t have to dominate your existence. Our soothing massage services at Elegance Haven are the perfect antidote. Our skilled therapists offer a range of massages, from Swedish and deep tissue to aromatherapy and hot stone, tailored to your specific needs. These treatments are designed to melt away stress, relieve muscle tension, and promote overall well-being. Step into our tranquil massage rooms and let your worries fade away as you indulge in the ultimate relaxation experience.
+            </p>
+        </div>
+        <div class="col-xl-6">
+            <img src="cover_2.jpg" style="width:100%" />
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div w3-include-html="footer.html"></div>
+    <script>
+        includeHTML();
+    </script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+</body>
+</html>

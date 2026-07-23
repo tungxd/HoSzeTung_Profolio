@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="title" content="Skin Care">
+    <meta name="description" content="Skin Care">
+    <meta name="keywords" content="Skin Care, facial">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Special Services</title>
+    <style>
+
+        .center {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 5vw;
+            color: white;
+        }
+
+
+        .select {
+            text-align: center;
+        }
+
+        .product {
+            text-align: center;
+        }
+
+        .product table {
+            width: 100%;
+        }
+
+        .image {
+            width: 200px;
+            height: 200px;
+            border-radius: 6px;
+        }
+
+        .button {
+            text-align: center;
+        }
+
+        .button button {
+            background-color: #8E0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px 20px;
+        }
+
+
+    </style>
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /*loop through a collection of all HTML elements:*/
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain attribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /*make an HTTP request using the attribute value as the file name:*/
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /*remove the attribute, and call this function once more:*/
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /*exit the function:*/
+                    return;
+                }
+            }
+        }
+    </script>
+</head>
+
+
+<body>
+    <!--navigation bar-->
+    <div w3-include-html="navibar.html"></div>
+    <script>
+        includeHTML();
+    </script>
+    <!--heading-->
+    <img src="beauty.jpg" style="width:100%" />
+    <div class="center">Special Services</div>
+
+    <br/>
+    <br/>
+    <!--product table-->
+    <form action="ShoppingCart.php" method="post">
+        <table class="product" width="100%">
+            <tr>
+                <td>
+                    <img src="Eyebrow_Shaping.jpg" alt="Eyebrow Shaping" class="image" />
+                    <p>Eyebrow Shaping</p>
+                    <p>$120</p>
+                </td>
+                <td>
+                    <img src="belly_candle.webp" alt="Belly Candle" class="image" />
+                    <p>Belly Candle</p>
+                    <p>$250</p>
+                </td>
+                <td>
+                    <img src="Shoulder_Massage.webp" alt="Shoulder Massage" class="image" />
+                    <p>Shoulder Massage</p>
+                    <p>$130</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div style="display: flex; justify-content: space-around; text-align: center;" />
+                    <div>
+                        <img src="eyelash_perm.webp" alt="Eyelash Perm" class="image" />
+                        <p>Eyelash Perm</p>
+                        <p>$480</p>
+                    </div>
+                    <div>
+                        <img src="make_up.webp" alt="Make Up" class="image" />
+                        <p>Make Up</p>
+                        <p>$290</p>
+                    </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <!--form-->
+        <div class="product">
+            <table width="100%">
+                <div class="product">
+                <tr>
+                    <td colspan="2">Please select your products:</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <select name="treatment" required>
+                            <option>Eyebrow Shaping</option>
+                            <option>Belly Candle</option>
+                            <option>Shoulder Massage</option>
+                            <option>Eyelash Perm</option>
+                            <option>Make Up</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Quantity: <input type="number" name="quantity" min="0" max="100" step="1" required /></td>
+                </tr>
+                <tr>
+                    <td>Customer Name:<br /><input type="text" id="name" name="name" required /></td>
+                    <td>Phone:<br /><input type="tel" id="phone" name="phone" placeholder="########" pattern="\d{8}" required /></td>
+                </tr>
+                <tr>
+                    <td>Email:<br /><input type="email" name="email" required />
+                    <td>Age:<br /><input type="number" name="age" min="3" max="120" required />
+                </tr>
+                <tr>
+                    <td>Gender:<br /><input type="radio" name="gender" value="boy" required /> Boy <input type="radio" name="gender" value="girl" required /> Girl </td>
+                    <td>Date:<br /><input type="date" name="date" id="date" /></td>
+                </tr>
+                <tr>
+                    <td>Timeslot:<br /><input type="time" id="time" name="time" required /></td>
+                    <td>Remark:<br /><input type="text" id="remark" name="remark" /></td>
+                </tr>
+        </div>
+        </table>
+        <div class="button">
+            <button type="submit" name="submit">Add to cart</button>
+        </div>
+        </div>
+    </form>
+
+    <br/>
+    <!--footer-->
+    <br><br>
+    <div w3-include-html="footer.html"></div>
+    <script>
+        includeHTML();
+    </script>
+</body>
+</html>

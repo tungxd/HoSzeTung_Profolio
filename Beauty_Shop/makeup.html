@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Makeup</title>
+		<style>
+		body h1 {
+			color:BlueViolet;
+			text-align:center;
+		}
+
+		.makeup {
+			display:block;
+			border-radius: 10px;
+			height:200px;
+			width:200px;
+			background-color:white;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+		td {
+			text-align:center;
+		}
+		
+		body {
+            margin: 0px;
+            font-size: 16px;
+            font-family: didot;
+        }
+		
+		.select {
+			text-align:center;
+		}
+		
+		.button {
+			text-align:center;
+		}
+		
+		.button button{
+			background-color:#8E0000;
+			color: white;
+			border:none;
+			border-radius:5px;
+			cursor:pointer;
+			font-size: 16px;
+			padding: 10px 20px;
+		}
+		
+		.container {
+            position: relative;
+            text-align: center;
+            color: #ffffff;
+        }
+			
+        .center{
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+			font-size: 5vw;
+			color: white;
+        }
+		
+		.product{
+            text-align: center;
+        }
+		</style>
+
+	</head>
+	<body>
+		<div w3-include-html="navibar.html"></div>
+		
+				<img src="makeup_1.jpg" style="width:100%"/>
+				<div class="center">Make up</div>
+		<br/>
+		<br/>
+		<form action="ShoppingCart.php" method="post">
+			<table class="product" width="100%">
+				<tr>
+					<td><img src="makeup_7.jpg" class="makeup" /></td>
+					<td><img src="makeup_2.jpg" class="makeup" /></td>
+					<td><img src="makeup_3.jpg" class="makeup" /></td>
+				</tr>
+				<tr>
+					<td>Weightless Skin Foundation SPF 15</td>
+					<td>Skin Concealer Stick</td>
+					<td>Mini Highlighting Powder</td>
+				</tr>
+				<tr>
+					<td>HK$500</td>
+					<td>HK$450</td>
+					<td>HK$680</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+					<div style="display: inline-block; width: 45%; text-align: center;">
+					<img src="makeup_4.jpg" class="makeup" />
+					Pot Rouge for Lips & Cheeks<br>HK$300
+					</div>
+					<div style="display: inline-block; width: 45%; text-align: center;">
+					<img src="makeup_5.jpg" class="makeup" />
+					Bronzing Powder<br>HK$400
+					</div>
+				</td>
+			</tr>
+			</table>
+			
+			<table width="60%" style="margin-left:20%">
+				<div class="select">
+					<tr>
+						<td colspan="2">Please select the make up products:</td>
+					</tr>
+					<tr>			
+						<td colspan="2"><select name="treatment" required>
+							<option>Weightless Skin Foundation SPF 15</option>
+							<option>Skin Concealer Stick</option>
+							<option>Mini Highlighting Powder</option>
+							<option>Pot Rouge for Lips & Cheeks</option>
+							<option>Bronzing Powder</option>
+						</select></td>
+					</tr>
+					<tr>			
+						<td colspan="2">Quantity: <input type="number" name="quantity" min="0" max="100" step="1" required /></td>
+					</tr>
+					<tr>
+						<td>Customer Name:<br/><input type="text" id="name" name="name" required /></td>
+						<td>Phone:<br/><input type="tel" id="phone" name="phone" placeholder="########" pattern="\d{8}"required /></td>
+					</tr>
+					<tr>
+						<td>Email:<br/><input type="email" name="email" required />
+						<td>Age:<br/><input type="number" name="age" min="3" max="120" required />
+					</tr>
+					<tr>
+						<td>Gender:<br/><input type="radio" name="gender" value="boy" required /> Boy <input type="radio" name="gender" value="girl" required /> Girl </td>
+						<td>Date:<br/><input type="date" name="date" id="date" /></td>
+					</tr>
+					<tr>
+						<td>Timeslot:<br/><input type="time" id="time" name="time" required /></td>
+						<td>Remark:<br/><input type="text" id="remark" name="remark"/></td>
+					</tr>
+				</div>
+			</table>
+			<div class="button">
+				<button type="submit" name="submit">Add to cart</button>
+			</div>
+		</form>
+	<br/>
+	<div w3-include-html="footer.html"></div>
+	<script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script>
+        w3.includeHTML();
+    </script>
+    
+	</body>
+</html>

@@ -1,0 +1,156 @@
+<html>
+	<head>
+		<title>Professional Face Treatment</title>
+		<style>
+
+		.treatment {
+			display:block;
+			border-radius: 10px;
+			height:200px;
+			width:200px;
+			background-color:white;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+		td {
+			text-align:center;
+		}
+		
+		body {
+            margin: 0px;
+            font-size: 16px;
+            font-family: didot;
+        }
+		
+		.select {
+			text-align:center;
+		}
+		
+		.button {
+			text-align:center;
+		}	
+		
+		.button button{
+			background-color:#8E0000;
+			color: white;
+			border:none;
+			border-radius:5px;
+			cursor:pointer;
+			font-size: 16px;
+			padding: 10px 20px;
+		}
+		
+		.container {
+            position: relative;
+            text-align: center;
+            color: #ffffff;
+        }
+			
+        .center{
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+			font-size: 5vw;
+			color: white;
+        }
+		
+		.product{
+            text-align: center;
+        }
+		</style>
+	</head>
+	<body>
+		<div w3-include-html="navibar.html"></div>
+
+		<img src="Treatment_1.jpg" style="width:100%"/>
+		<div class="center">Face Treatment</div>
+
+		<br />
+		<br />
+
+		<form action="http://localhost/ShoppingCart.php" method="post">
+			<table class="product" width="100%">
+				<tr>
+					<td><img src="BasicFacial.jpg" class="treatment" /></td>
+					<td><img src="AcneTreatment.jpg" class="treatment" /></td>
+					<td><img src="AromaticTreatment.jpg" class="treatment" /></td>
+				</tr>
+				<tr>
+					<td>Basic Facial</td>
+					<td>Ultra-sound Acne Treatment</td>
+					<td>Aromatic Treatment</td>
+				</tr>
+				<tr>
+					<td>HK$380</td>
+					<td>HK$650</td>
+					<td>HK$700</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<div style="display: inline-block; width: 45%; text-align: center;">
+							<img src="DiamondTreatment.jpg" class="treatment" />
+							Diamond Peel Facial Treatment<br>HK$850
+						</div>
+						<div style="display: inline-block; width: 45%; text-align: center;">
+							<img src="GirlLineTreatment.jpg" class="treatment" />
+							Girl Line Treatment<br>HK$880
+						</div>
+					</td>
+				</tr>
+			</table>
+
+			<br/>
+			<br/>
+
+			<table width="60%" style="margin-left: 20%">
+				<div class="select">
+				<tr>
+					<td colspan="2">Please select the treatment:</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<select name="treatment" required>
+							<option>Basic Facial</option>
+							<option>Ultra-sound Acne Treatment</option>
+							<option>Aromatic Treatment</option>
+							<option>Diamond Peel Facial Treatment</option>
+							<option>Girl Line Treatment</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">Quantity: <input type="number" name="quantity" min="0" max="100" step="1" required /></td>
+				</tr>
+				<tr>
+					<td>Customer Name:<br /><input type="text" id="name" name="name" required /></td>
+					<td>Phone:<br /><input type="tel" id="phone" name="phone" placeholder="########" pattern="\d{8}" required /></td>
+				</tr>
+				<tr>
+					<td>Email:<br /><input type="email" name="email" required />
+					<td>Age:<br /><input type="number" name="age" min="3" max="120" required />
+				</tr>
+				<tr>
+					<td>Gender:<br /><input type="radio" name="gender" value="boy" required /> Boy <input type="radio" name="gender" value="girl" required /> Girl </td>
+					<td>Date:<br /><input type="date" name="date" id="date" required /></td>
+				</tr>
+				<tr>
+					<td>Timeslot:<br /><input type="time" id="time" name="time" required /></td>
+					<td>Remark:<br /><input type="text" id="remark" name="remark" /></td>
+				</tr>
+				</div>
+			</table>
+			<div class="button">
+				<button type="submit" name="submit">Add to cart</button>
+			</div>
+		</form>
+
+		<br/>
+		<div w3-include-html="footer.html"></div>
+		<script src="https://www.w3schools.com/lib/w3.js"></script>
+		<script>
+			w3.includeHTML();
+		</script>
+	</body>
+</html>	

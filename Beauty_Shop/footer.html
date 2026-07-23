@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0px;
+            font-size: 16px;
+            font-family: didot;
+        }
+
+        .submit_btn {
+            font-family: didot;
+            background-color: #8e0000;
+            border: 0px;
+            border-radius: 4px;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            display: inline-block;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>  
+   
+<body>
+    <br/>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-6">
+            <form action="php/send_email.php" method="post">
+
+                <label for="name">Name</label>
+                <input type="text" id="name">
+
+                <label for="telephone">Phone</label>
+                <input type="tel" id="telephone" pattern="\d{4}-\d{4}" />
+
+                <br/><br/>
+
+                <label for="Email">Email</label>
+                <input type="email" id="Email">
+
+                <br/><br/>
+
+                <label for="question">Message</label>
+                <br />
+                <textarea rows="6" cols="55" id="question"></textarea>
+
+                <br/><br/>
+                <button type="submit" class="submit_btn" btn-link="">Submit</button>
+            </form>
+        </div>
+
+        <div class="col-lg-5">
+            <form action="subscribe.php" method="post">
+                <label for="Subscription">Subscribe our news letter</label>
+                <br />
+                <input type="text" id="Subscription" placeholder="Enter email">
+                <button type="submit" class="submit_btn" btn-link="">Subscribe</button>
+            </form>
+            <br/>
+            <a href="https://www.facebook.com/" target="_blank"><img src="facebook.png" alt="Facebook" width="8%" /></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="instagram.png" alt="Instagram" width="8%" /></a>
+            <a href="https://web.whatsapp.com/" target="_blank"><img src="whatsapp.png" alt="Whatsapp" width="8%" /></a>
+            <a href="https://www.youtube.com/" target="_blank"><img src="youtube.png" alt="Youtube" width="8%" /></a>
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="row">
+        <div class="text-center col-lg-12">
+            <p style="background-color: #8e0000; color: white ">&copy; 2024 All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

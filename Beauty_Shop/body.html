@@ -1,0 +1,153 @@
+<html>
+	<head>
+		<title>Body Treatment</title>
+		<style>
+		
+		.treatment {
+			display:block;
+			border-radius: 10px;
+			height:200px;
+			width:235px;
+			background-color:white;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+		td {
+			text-align:center;
+		}
+		
+		body {
+            margin: 0px;
+            font-size: 16px;
+            font-family: didot;
+        }
+		
+		.select {
+			text-align:center;
+		}
+		
+		.button {
+			text-align:center;
+		}
+		
+		.button button{
+			background-color:#8E0000;
+			color: white;
+			border:none;
+			border-radius:5px;
+			cursor:pointer;
+			font-size: 16px;
+			padding: 10px 20px;
+		}
+		
+		.container {
+            position: relative;
+            text-align: center;
+            color: #ffffff;
+        }
+			
+        .center{
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+			font-size: 5vw;
+			color: white;
+        }
+		
+		.product{
+            text-align: center;
+        }	
+		</style>
+	</head>
+	<body>
+		<div w3-include-html="navibar.html"></div>
+		
+
+				<img src="body.jpg" style="width:100%"/>
+				<div class="center">Body Treatment</div>
+		<br/>
+		<br/>
+
+		<form action="http://localhost/ShoppingCart.php" method="post">
+		<table class="product" width="100%">
+			<tr>
+				<td><img src="BodyMassage.jpg" class="treatment"/>
+					<p>Body Relaxation Massage (45 Mins)</p>
+					<p>HK$290</p>
+				</td>
+				<td><img src="HandTreatment.jpg" class="treatment"/>
+					<p>Whitening Hand Treatment</p>
+					<p>HK$280 </p>
+				</td>
+				<td><img src="StoneMassage.jpg" class="treatment"/>
+					<p>Basalt Stone Massage (20 Mins)</p>
+					<p>HK$400</p>
+				</td>
+			</tr>	
+			<tr>
+				<td colspan="3">
+					<div style="display: inline-block; width: 45%; text-align: center;">
+					<img src="BackTreatment.jpg" class="treatment"/>
+					Back Whitening Treatment<br>HK$600
+					</div>
+					<div style="display: inline-block; width: 45%; text-align: center;">
+					<img src="LymphaticMassage.jpg" class="treatment"/>
+					Lymphatic Drainage Massage (45 Mins)<br>HK$390
+					</div>
+				</td>
+			</tr>
+				
+		</table>
+			
+		<table width="60%" style="margin-left:20%">
+			<div class="select">
+			<tr>
+				<td colspan="2">Please select the treatment:</td>
+			</tr>
+			<tr>			
+				<td colspan="2"><select name="treatment" required>
+					<option>Body Relaxation Massage (45 Mins)</option>
+					<option>Whitening Hand Treatment</option>
+					<option>Basalt Stone Massage</option>
+					<option>Back Whitening Treatment</option>
+					<option>Lymphatic Drainage Massage (45 Mins)</option>
+				</select></td>
+			</tr>
+			<tr>			
+				<td colspan="2">Quantity: <input type="number" name="quantity" min="0" max="100" step="1" required /></td>
+			</tr>
+			<tr>
+				<td>Customer Name:<br/><input type="text" id="name" name="name" required /></td>
+				<td>Phone:<br/><input type="tel" id="phone" name="phone" placeholder="########" pattern="\d{8}"required /></td>
+			</tr>
+			<tr>
+				<td>Email:<br/><input type="email" name="email" required />
+				<td>Age:<br/><input type="number" name="age" min="3" max="120" required />
+			</tr>
+			<tr>
+				<td>Gender:<br/><input type="radio" name="gender" value="boy" required /> Boy <input type="radio" name="gender" value="girl" required /> Girl </td>
+				<td>Date:<br/><input type="date" name="date" id="date" /></td>
+			</tr>
+			<tr>
+				<td>Timeslot:<br/><input type="time" id="time" name="time" required /></td>
+				<td>Remark:<br/><input type="text" id="remark" name="remark"/></td>
+			</tr>
+			</div>
+		</table>
+			<div class="button">
+				<button type="submit" name="submit">Add to cart</button>
+			</div>
+		</form>
+
+		<br/>
+
+	<div w3-include-html="footer.html"></div>
+	<script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script>
+        w3.includeHTML();
+    </script>
+    
+	</body>
+</html>

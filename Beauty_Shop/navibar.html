@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .body {
+          margin: 0;
+          font-size: 28px;
+          font-family: didot;
+        }
+
+        .header {
+          background-color: #560000;
+          text-align: center;
+        }
+
+        .navbar {
+          position: sticky;
+          top: 0;
+          overflow: hidden;
+          background-color: #8E0000;
+          display:block;
+          
+        }
+
+        .nav_right {
+            float: right;
+        }
+
+        .navbar a {
+          float: left;
+          display: block;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 11px 16px;
+          text-decoration: none;
+          font-size: 18px;
+        }
+
+        .navbar a:hover {
+          /*background-color: #560000;*/
+          color: white;
+          text-decoration: underline;
+          transform: scale(1.1); 
+         }
+
+        .navbar input[type=text] {
+            float: right;
+            padding: 6px;
+            margin-top: 10px;
+            margin-right: 10px;
+            border: none;
+            font-size: 17px;
+        }
+
+        .navbar input[type=image] {
+            float: right;
+            padding: 6px;
+            margin-top:10px;
+            margin-right: 10px;
+            border: none;
+            font-size: 17px;
+        }
+
+        @media screen and (max-width: 600px) {
+            #navbar input[type=text] {
+                float: right;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 30px;
+            }
+        
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+		<a href="homepage.html" target="main">Home</a>
+        <a href="makeup.html" target="main">Make up</a>
+        <a href="treatment.html" target="main">Face Treatment</a>
+        <a href="body.html" target="main">Body Treatment</a>
+		<a href="specialservices.html" target="main">Special Service</a>
+		<a href="skincare.html" target="main">Skin Care</a>
+			<div class="nav_right">
+				<form action="php/search.php">
+					<input type="text" placeholder="Search...">
+					<input type="image" src="search.png" alt="Submit" style="width:30px" />
+					<a href="ShoppingCart.php">
+					<img src="shoppingcart.png" alt="Shopping Cart" style="width:30px" />
+					</a>
+				</form>
+			</div>
+	</div>
+</body>
+</html>
