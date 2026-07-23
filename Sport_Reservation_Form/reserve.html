@@ -1,0 +1,82 @@
+<!--SEHS4517 Web Application Development and Management-->
+<!--Individual Assignment-->
+<!--7 March 2025-->
+<!--Ho Sze Tung-->
+<!--24055226S-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Healthy Sports Center</title>
+	</head>
+	<body background="sport.jpg" style="background-repeat: no-repeat; background-size: cover">
+		<h1 style="text-align:center; color: BlueViolet">Welcome to Healthy Sports Center!</h1>
+		<img src="sport_img.png" width="300" height="100" style="float:right"/>
+		<h2 style="color:brown; margin-left:10px"><u>Introduction</u></h2>
+		<p style="color:DarkBlue; margin-left:10px"><i>Healthy Sports Center is a large sports center that offers customers a unique blend of 
+		relaxation and various sports training and exercises. We strive to create an environment that not only encourages physical activity 
+		but also fosters a sense of community and camaraderie among our members. Our sports center provides a relaxed and energetic atmosphere 
+		to engage in sports.</i></p>
+		<p style="color:DarkBlue; margin-left:10px"><i>Here, you can choose the sports that resonate with you the most. Our diverse range 
+		of sports caters to varying interests and fitness levels, ensuring that there is always something for you to explore and enjoy.</i></p>
+		<p style="color:DarkBlue; margin-left:10px"><i>For those who would like to try other sports, we offer opportunities in a variety of sports. 
+		This can help you discover new passions, and we also offer fitness training to get you involved in a holistic fitness program that targets 
+		different muscle groups and skills. Trying different sports can be a fun and enlightening experience, allowing you to discover hidden 
+		talents and interests you never knew you had.</i></p>
+		<p style="color:DarkBlue; margin-left:10px"><i>So why wait? Take the first step towards a healthier and more fulfilling lifestyle by 
+		registering with our sports center today. Join us on this exciting journey of self-discovery, fitness, and fun as we strive to create 
+		a welcoming space where you can thrive both physically and mentally. Let's embark on this adventure together and unlock the endless 
+		possibilities that sports have to offer!</i></p>
+
+		<div style="text-align:center; background-color:green; color:white">Reservation form</div><br/>
+		<form action="http://localhost/reserve.php" method="post">
+		<fieldset>
+		<table width="100%" style="text-align:center">
+			<tr height="40px">
+				<td>First Name:<input type="text" name="firstname" placeholder="Tai Man" required /></td>
+				<td>Last Name:<input type="text" name="lastname" placeholder="Chan" required /></td>
+			</tr>
+			<tr height="40px">
+				<td>Gender:<select name="gender" required>
+					<option>Male</option>
+					<option>Female</option>
+					</select></td>
+				<td>Date of Reservation:<input type="date" name="datein" required /></td>
+			</tr>
+			<tr height="40px">
+				<td>Time of Reservation:<input type="time" name="timein" required /></td>
+				<td>Item to Reserve:<select name="item" required>
+					<option>Badminton</option>
+					<option>Basketball</option>
+					<option>Fitness training</option>
+					<option>Football</option>
+					<option>Squash</option>
+					<option>Table Tennis</option>
+					<option>Volleyball</option>
+					</select></td>
+			</tr>
+			<tr height="40px">
+				<td>Contact Mailing Address:<input type="input" name="address" placeholder="Block, Floor, Flat, Buildings, District, City" required /></td>
+				<td>Contact Phone Number:<input type="tel" name="telin" placeholder="####-####" pattern="\d{4}-\d{4}" required /></td>
+			</tr>
+			<tr height="40px">
+				<td colspan="2" style="text-align:center">Email Address:<input type="email" name="emailin" placeholder="youremail@abc.com" required /></td>
+			</tr>		
+			<tr height="40px">
+				<td>Member Username:<input type="input" name="username" required /></td>
+				<td>Member Password:<input type="password" name="passwordin" required /></td>
+			</tr>
+		</table>
+		</fieldset>
+		<br/>
+		
+		<div style="text-align:center">
+			<button type="submit" id="submit"
+			style="background-color:green; color: white; border-radius:5px; border:none; cursor:pointer; font-size: 17px; padding: 10px 20px; font-family:Times New Romance">
+			Reserve</button>
+			<button type="reset" id="reset"
+			style="background-color:green; color: white; border-radius:5px; border:none; cursor:pointer; font-size: 17px; padding: 10px 20px; font-family:Times New Romance">
+			Clear</button>
+		</div>
+		</form>
+	</body>
+</html>	
