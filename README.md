@@ -6,3 +6,4 @@ Main page file:
 
 1. 將"Beauty_Shop" 和 "Sport_Reservation_Form" 資料夾複製到XAMPP的 'htdocs'資料夾
 2. 開啟XAMPP後，在瀏覽器開啟 http://localhost/homepage.html 或者 http://localhost/reserve.html
+* Beauty_Shop需要連接內部database才可看到shopping cart.
